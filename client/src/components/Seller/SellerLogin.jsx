@@ -2,13 +2,13 @@ import React, { useEffect, useState } from 'react'
 import { useAppContext } from '../../context/AppContext'
 
 const SellerLogin = () => {
-    const {isSeller,setIsSeller,navigate} = useAppContext()
+    const {isSeller,setSeller,navigate} = useAppContext()
     const [email,setEmail] = useState("");
     const [password,setPassword] = useState("");
 
     const onSubmitHandler = async (event)=>{
         event.preventDefault();
-        setIsSeller(true)
+        setSeller(true)
     }
 
     useEffect(()=>{
@@ -34,9 +34,7 @@ const SellerLogin = () => {
                 <input onChange={(e)=>setPassword(e.target.value)} value={password} type='password' placeholder='enter your password'
                 className='border border-gray-200 rounded w-full p-2 mt-1 outline-primary' required/>
             </div>
-            <button className='bg-primary text-white w-full py-2 rounded-md cursor-pointer'>
-                Login
-            </button>
+            <button className='bg-primary text-white w-full py-2 rounded-md cursor-pointer'>Login</button>
         </div>
 
     </form>
